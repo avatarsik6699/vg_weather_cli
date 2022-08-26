@@ -1,0 +1,14 @@
+{
+  "name": "v_weather-cli",
+  "version": "1.0.0",
+  "private": false,
+  "main": "index.js",
+  "description": "descr",
+  "license": "MIT",
+  "keywords": ["cli", "weather"],
+  "author": "V.G.",
+  "bin": "./index.js",
+  "scripts": {
+
+  }
+}
