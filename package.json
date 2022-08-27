@@ -1,6 +1,6 @@
 {
   "name": "vg_weather-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Weather forecast utility",
   "license": "MIT",
   "author": "V.G.",
@@ -10,6 +10,10 @@
     "cli",
     "weather"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avatarsik6699/vg_weather_cli"
+  },
   "main": "weather.js",
   "bin": {
     "weather": "weather.js"
