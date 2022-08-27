@@ -1,14 +1,25 @@
 {
-  "name": "v_weather-cli",
-  "version": "1.0.0",
-  "private": false,
-  "main": "index.js",
-  "description": "descr",
+  "name": "vg_weather-cli",
+  "version": "1.0.2",
+  "description": "Weather forecast utility",
   "license": "MIT",
-  "keywords": ["cli", "weather"],
   "author": "V.G.",
-  "bin": "./index.js",
+  "private": false,
+  "type": "module",
+  "keywords": [
+    "cli",
+    "weather"
+  ],
+  "main": "weather.js",
+  "bin": {
+    "weather": "weather.js"
+  },
   "scripts": {
-
+    "start": "node ./weather.js"
+  },
+  "dependencies": {
+    "axios": "0.27.2",
+    "chalk": "5.0.1",
+    "dedent-js": "1.0.1"
   }
 }
