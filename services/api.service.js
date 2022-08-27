@@ -2,20 +2,20 @@ import axios from "axios";
 import { config } from "../weather.config.js";
 import { logService } from "./log.service.js";
 import { storageService } from "./storage.service.js";
-import {example} from '../demo/example.js';
+import { example } from "../demo/example.js";
 
 const { EXAMPLE } = config.constants;
 
 export const apiService = {
   get: {
     weather: async (city) => {
-      if (city === EXAMPLE) return example
+      if (city === EXAMPLE) return example;
 
       const token = await storageService.getToken();
 
       if (token) {
         try {
-          const { lon, lat } = await apiService.get.city(city);
+          const { lon, lat } = (await apiService.get.city(city)) || {};
           const { data } = await axios.get(config.urls.getWeather, {
             params: {
               lat,
@@ -28,7 +28,7 @@ export const apiService = {
 
           return data;
         } catch (error) {
-          console.error(error);
+          logService.print.error(error.response.data.message);
         }
       } else {
         logService.print.error("token not found.");
@@ -53,7 +53,7 @@ export const apiService = {
             lon: data[0].lon,
           };
         } catch (error) {
-          console.error(error);
+          logService.print.error(error.response.data.message);
         }
       } else {
         logService.print.error("token not found.");
